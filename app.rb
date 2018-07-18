@@ -11,6 +11,7 @@ class App < Sinatra::Base
   get "/hello/:name" do
     @user_name = params[:name]
     "Hello #{@user_name}!"
+    %x( say 'hello world' ) 
   end
 
   # Code your final two routes here:
@@ -23,7 +24,6 @@ class App < Sinatra::Base
     @num1 = params[:num1].to_i
     @num2 = params[:num2].to_i
     " Product is #{@num1 * @num2}"
-  #  "Product is #{params[:num1]} * #{params[:num2]}."
   end
 
 end
